@@ -1,0 +1,6 @@
+id=stm-fts-drv
+name=ST Fingertip Driver
+version=v1.0
+versionCode=0
+author=FanSin (st.com)
+description=rmmod original fingertip driver and insmod customized ST Fingertip driver.
