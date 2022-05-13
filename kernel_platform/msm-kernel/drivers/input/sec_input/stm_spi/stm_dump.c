@@ -498,6 +498,9 @@ void stm_ts_init_proc(struct stm_ts_data *ts)
 	if (!ts->cmoffset_main_proc)
 		goto err_alloc_main;
 
+	// Remove proc entry since this is not removed in original driver
+	remove_proc_entry("tsp_cmoffset_all", NULL);
+
 	entry_cmoffset_all = proc_create("tsp_cmoffset_all", S_IFREG | S_IRUGO, NULL, &tsp_cmoffset_all_file_ops);
 	if (!entry_cmoffset_all) {
 		input_err(true, &ts->client->dev, "%s: failed to create /proc/tsp_cmoffset_all\n", __func__);

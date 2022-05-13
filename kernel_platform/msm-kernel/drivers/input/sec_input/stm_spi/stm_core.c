@@ -2399,6 +2399,8 @@ void stm_ts_release(struct stm_ts_data *ts)
 int stm_ts_probe(struct stm_ts_data *ts)
 {
 	int ret = 0;
+// Disable deferred check since this will failed the insmod.
+/*
 #if IS_MODULE(CONFIG_TOUCHSCREEN_STM) || IS_MODULE(CONFIG_TOUCHSCREEN_STM_SPI)
 	static int deferred_flag = 0;
 
@@ -2408,7 +2410,7 @@ int stm_ts_probe(struct stm_ts_data *ts)
 		return -EPROBE_DEFER;
 	}
 #endif
-
+*/
 	input_info(true, &ts->client->dev, "%s\n", __func__);
 
 	ret = stm_ts_init(ts);

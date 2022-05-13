@@ -236,7 +236,7 @@ function copy_dist_bins() (
   for FILE in $(ls -1 ${DIST_BINS}); do
     if [ -f ${ROOT_DIR}/${FILE} ]; then
       echo "  $FILE"
-      cp -p ${ROOT_DIR}/${FILE} ${COMMON_OUT_DIR}/host/bin/
+      cp -f -p ${ROOT_DIR}/${FILE} ${COMMON_OUT_DIR}/host/bin/
     else
       echo "  $FILE is not a file, skipping"
     fi
